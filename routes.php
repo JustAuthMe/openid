@@ -7,9 +7,6 @@
  */
 
 const ROUTES = [
-    '.well-known' => [
-        'openid-configuration' => 'openid_configuration'
-    ],
     'home' => 'home',
     'registration' => 'registration',
     'authorization' => 'authorization',
