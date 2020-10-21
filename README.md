@@ -1,2 +1,1 @@
-# OpenID
-
+# JustAuthMe OpenID server

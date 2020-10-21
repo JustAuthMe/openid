@@ -1,0 +1,24 @@
+{
+    "name": "justauthme/openid-server",
+    "authors": [
+        {
+            "name": "Peter Cauty",
+            "email": "peter@justauth.me",
+            "role": "Developer"
+        }
+    ],
+    "version": "1.0.0",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "require": {
+        "php": "^7.4",
+        "justauthme/php-sdk": "^1.1.1",
+        "ext-iconv": "*",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "ext-openssl": "*",
+        "ext-redis": "*",
+      "ext-apache": "*"
+    }
+}

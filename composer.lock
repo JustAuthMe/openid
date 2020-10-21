@@ -1,0 +1,65 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "e4535e50cb4569c258c89b201818734f",
+    "packages": [
+        {
+            "name": "justauthme/php-sdk",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JustAuthMe/PHP-SDK.git",
+                "reference": "439415d651c37076cdf89d7d067e600f17a89a2f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JustAuthMe/PHP-SDK/zipball/439415d651c37076cdf89d7d067e600f17a89a2f",
+                "reference": "439415d651c37076cdf89d7d067e600f17a89a2f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JustAuthMe\\SDK\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "authors": [
+                {
+                    "name": "Peter Cauty",
+                    "email": "peter@justauth.me",
+                    "homepage": "https://justauth.me"
+                }
+            ],
+            "description": "Official PHP SDK for the JustAuthMe platform",
+            "time": "2020-07-16T13:26:41+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.4",
+        "ext-iconv": "*",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "ext-openssl": "*",
+        "ext-redis": "*"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}
