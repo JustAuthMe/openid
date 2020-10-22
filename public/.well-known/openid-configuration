@@ -4,7 +4,9 @@
   "token_endpoint": "http://localhost/JustAuth.Me/openid/public/token",
   "jwks_uri": "http://localhost/JustAuth.Me/openid/public/jwks",
   "registration_endpoint": "http://localhost/JustAuth.Me/openid/public/registration",
+  "userinfo_endpoint": "http://localhost/JustAuth.Me/openid/public/userinfo",
   "scopes_supported": [
+    "openid",
     "profile",
     "email"
   ],
@@ -34,6 +36,12 @@
     "email_verified",
     "birthdate",
     "locale"
+  ],
+  "ui_locales_supported": [
+    "en-US",
+    "en-GB",
+    "fr-FR",
+    "fr-CA"
   ],
   "service_documentation": "https://docs.justauth.me",
   "op_policy_uri": "https://justauth.me/p/privacy-policy",

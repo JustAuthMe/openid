@@ -95,7 +95,7 @@ $apiCall->setUrl(JAM_API . 'client_app')
         'name' => $client_name,
         'logo' => $logo_uri,
         'redirect_url' => $redirect_url,
-        'data' => json_encode(['email!'])
+        'data' => json_encode(['email!', 'firstname', 'lastname', 'birthdate', 'avatar'])
     ])
     ->exec();
 $client_app = clone $apiCall->responseObj()->client_app;
