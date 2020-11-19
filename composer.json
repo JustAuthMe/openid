@@ -18,7 +18,6 @@
         "ext-json": "*",
         "ext-pdo": "*",
         "ext-openssl": "*",
-        "ext-redis": "*",
-      "ext-apache": "*"
+        "ext-redis": "*"
     }
 }
