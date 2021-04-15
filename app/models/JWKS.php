@@ -53,7 +53,7 @@ class JWKS {
     }
 
     public static function getPubKeys(): array {
-        return self::getKeys('pub');
+        return self::getKeys();
     }
 
     public static function getKeypairs() {
