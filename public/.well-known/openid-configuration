@@ -1,14 +1,15 @@
 {
-  "issuer": "http://localhost/JustAuth.Me/openid/public/",
-  "authorization_endpoint": "http://localhost/JustAuth.Me/openid/public/authorization",
-  "token_endpoint": "http://localhost/JustAuth.Me/openid/public/token",
-  "jwks_uri": "http://localhost/JustAuth.Me/openid/public/jwks",
-  "registration_endpoint": "http://localhost/JustAuth.Me/openid/public/registration",
-  "userinfo_endpoint": "http://localhost/JustAuth.Me/openid/public/userinfo",
+  "issuer": "http://localhost/JustAuthMe/openid/public/",
+  "authorization_endpoint": "http://localhost/JustAuthMe/openid/public/authorization",
+  "token_endpoint": "http://localhost/JustAuthMe/openid/public/token",
+  "jwks_uri": "http://localhost/JustAuthMe/openid/public/jwks",
+  "registration_endpoint": "http://localhost/JustAuthMe/openid/public/registration",
+  "userinfo_endpoint": "http://localhost/JustAuthMe/openid/public/userinfo",
   "scopes_supported": [
     "openid",
     "profile",
-    "email"
+    "email",
+    "address"
   ],
   "response_types_supported": [
     "code"
@@ -35,7 +36,8 @@
     "email",
     "email_verified",
     "birthdate",
-    "locale"
+    "locale",
+    "address"
   ],
   "ui_locales_supported": [
     "en-US",

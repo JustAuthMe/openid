@@ -7,7 +7,7 @@ use PitouFW\Core\Data;
 
 if (!POST) {
     Controller::http405MethodNotAllowed();
-    Controller::renderApiError('invalid_method', 'Only POST requests are allowed on this endpoint');
+    Controller::renderApiError('invalid_request', 'Only POST requests are allowed on this endpoint');
 }
 
 $license_key = $_GET['license_key'] ??
@@ -41,7 +41,7 @@ if (!isset($_POST['redirect_uris']) || !is_array($_POST['redirect_uris'])) {
 
 $redirect_url = $_POST['redirect_uris'][0];
 if (strpos($redirect_url, 'https://') !== 0) {
-    Controller::http400BadRequest();
+    Controller::http422UnprocessableEntity();
     Controller::renderApiError('invalid_redirect_uri', 'Redirect URIs must start by https:// scheme');
 }
 
@@ -51,20 +51,20 @@ $client_uri = 'https://' . $domain . '/';
 
 if (isset($_POST['response_types'])) {
     if (!is_array($_POST['response_types'])) {
-        Controller::http400BadRequest();
+        Controller::http422UnprocessableEntity();
         Controller::renderApiError('invalid_response_type', 'response_types must be an array');
     } elseif (!in_array('code', $_POST['response_types'])) {
-        Controller::http400BadRequest();
+        Controller::http422UnprocessableEntity();
         Controller::renderApiError('invalid_response_type', 'Only "code" response_type is supported');
     }
 }
 
 if (isset($_POST['grant_types'])) {
     if (!is_array($_POST['grant_types'])) {
-        Controller::http400BadRequest();
+        Controller::http422UnprocessableEntity();
         Controller::renderApiError('invalid_grant_type', 'grant_types must be an array');
     } elseif (!in_array('authorization_code', $_POST['response_types'])) {
-        Controller::http400BadRequest();
+        Controller::http422UnprocessableEntity();
         Controller::renderApiError('invalid_grant_type', 'Only "authorization_code" grant_type is supported');
     }
 }
@@ -76,14 +76,14 @@ $logo_uri = $_POST['logo_uri'] ?? 'https://static.justauth.me/medias/client.png'
 $client_uri = $_POST['client_uri'] ?? $client_uri;
 
 if (isset($_POST['subject_type']) && $_POST['subject_type'] !== 'pairwise') {
-    Controller::http400BadRequest();
+    Controller::http422UnprocessableEntity();
     Controller::renderApiError('invalid_subject_type', 'Only pairwise Subject type is supported');
 }
 
 if (isset($_POST['token_endpoint_auth_method']) && !in_array($_POST['token_endpoint_auth_method'], OIDC::TOKEN_ENDPOINT_AUTH_METHODS_SUPPORTED)) {
     Controller::http400BadRequest();
     Controller::renderApiError('invalid_token_endpoint_auth_method', 'The supported authentication methods are: ' .
-        json_encode(OIDC::TOKEN_ENDPOINT_AUTH_METHODS_SUPPORTED));
+        implode(', ',OIDC::TOKEN_ENDPOINT_AUTH_METHODS_SUPPORTED));
 }
 
 $apiCall = new ApiCall();

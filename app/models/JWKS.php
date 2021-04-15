@@ -11,7 +11,7 @@ use PitouFW\Core\Redis;
 class JWKS {
     const DEFAULT_ALG = 'RS256';
 
-    const CACHE_KEY = 'jwks';
+    const CACHE_KEY = 'openid_jwks';
     const CACHE_TTL = 86400 * 366;
 
     private static function generateKeys(string $alg = self::DEFAULT_ALG): array {
